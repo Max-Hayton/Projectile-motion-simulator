@@ -8,7 +8,7 @@ namespace Projectile_motion_simulator
     public class Game1 : Game
     {
         //60 pixels per meter
-        private const float EARTHGRAVITY = 588.6f;
+        private const float EARTHGRAVITY = 9.81f*60f;
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
         private Texture2D _projectileTexture;
@@ -59,7 +59,7 @@ namespace Projectile_motion_simulator
             GraphicsDevice.Clear(Color.White);
 
             _spriteBatch.Begin();
-            _projectile.Draw(_spriteBatch);
+            //_projectile.Draw(_spriteBatch);
             _spriteBatch.Draw(_rulerTexture, new Vector2(0, _graphics.PreferredBackBufferHeight-50), Color.White);
             _spriteBatch.End();
 

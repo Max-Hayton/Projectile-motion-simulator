@@ -27,7 +27,7 @@ namespace Projectile_motion_simulator
         public Projectile()
         { }
 
-        public Projectile(Texture2D projectileTexture, Vector2 position, Color projectileColour, float displacement, float initialVelocity, float finalVelocity, Vector2 acceleration, float flightTime, float angle)
+        public Projectile(Texture2D projectileTexture, Vector2 position, Color projectileColour, float displacement, float initialVelocity,float finalVelocity, Vector2 acceleration, float flightTime, float angle)
         {
             _projectileTexture = projectileTexture;
             _position = position;
@@ -48,14 +48,15 @@ namespace Projectile_motion_simulator
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(_projectileTexture, _position, _projectileColour);
+            _displacement = _flightTime * ((_initialVelocity + _finalVelocity) / 2);
         }
 
         public Vector2 GetComponents()
         {
-            double angleRadians = _angle * Math.PI / 180.0;
+            double angleRadians = _angle * Math.PI / 180.0; // convert to radians for Math functions
             float horizontal = (float)(Math.Cos(angleRadians) * _initialVelocity);
             float vertical = -1*((float)(Math.Sin(angleRadians) * _initialVelocity));
-            _componentsOfVelocity = new Vector2(horizontal,vertical);
+            _componentsOfVelocity = new Vector2(horizontal,vertical); //creates the launch vector
             return _componentsOfVelocity;
         }
 
