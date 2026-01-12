@@ -70,7 +70,7 @@ namespace Projectile_motion_simulator
 
             //stop at ground
             float ground = screenHeight - 100;
-            float degreeOfRestitution = 0.5f;
+            float degreeOfRestitution = 0.8f;
             if (_position.Y > ground)
             {
                 _position.Y = ground;

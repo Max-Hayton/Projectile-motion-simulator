@@ -59,7 +59,7 @@ namespace Projectile_motion_simulator
             GraphicsDevice.Clear(Color.White);
 
             _spriteBatch.Begin();
-            //_projectile.Draw(_spriteBatch);
+            _projectile.Draw(_spriteBatch);
             _spriteBatch.Draw(_rulerTexture, new Vector2(0, _graphics.PreferredBackBufferHeight-50), Color.White);
             _spriteBatch.End();
 
